@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -61,6 +62,7 @@ public class UserServiceImpl implements UserService,UserDetailsService{
 
     @Override
     public List<User> getUsers() {
+       // PageRequest request = PageRequest.of(page, limit);
         return userRepo.findAll();
     }
 

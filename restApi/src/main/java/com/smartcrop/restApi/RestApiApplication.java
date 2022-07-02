@@ -37,19 +37,19 @@ public class RestApiApplication {
 //    }
         
         
-        @Bean
-        CommandLineRunner run(UserService userServ){
-            return args->{
-              if(userServ.getUsers().isEmpty()){
-                  Role superAdmin = new Role(null,"ROLE_SUPER_ADMIN");
-                  Role productor = new Role(null,"ROLE_PRODUCTOR");
-                  userServ.saveRole(productor);
-                  userServ.saveRole(superAdmin);
-                  userServ.saveUser(new User(null, "super_admin", "superusuario", "super_admin", new ArrayList<>()));
-                  userServ.addRoleToUser("super_admin", "ROLE_SUPER_ADMIN");
-                  userServ.saveUser(new User(null,"productor1","Jorge Hernandez","productor1",new ArrayList<>()));
-                  userServ.addRoleToUser("produtor1", "ROLE_PRODUCTOR");
-              }
-            };
-        }
+//        @Bean
+//        CommandLineRunner run(UserService userServ){
+//            return args->{
+//                  Role superAdmin = new Role(null,"ROLE_SUPER_ADMIN");
+//                  Role productor = new Role(null,"ROLE_PRODUCTOR");
+//                  userServ.saveRole(productor);
+//                  userServ.saveRole(superAdmin);
+//                  userServ.saveUser(new User(null, "super_admin", "superusuario", "super_admin", new ArrayList<>()));
+//                  userServ.addRoleToUser("super_admin", "ROLE_SUPER_ADMIN");
+//                  userServ.saveUser(new User(null,"productor1","Jorge Hernandez","productor1",new ArrayList<>()));
+//                  userServ.addRoleToUser("produtor1", "ROLE_PRODUCTOR");
+//              
+//            };
+//        }
+
 }
